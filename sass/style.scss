@@ -114,7 +114,7 @@ body {
   &.active {
     opacity: 1;
     transition: $transition;
-    z-index: 999;
+    z-index: 0;
     position: relative;
   }
 }
