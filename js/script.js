@@ -1,5 +1,17 @@
 'use strict';
 {
+
+  const templates = {
+    articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
+    tagLink: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML),
+    authorLink: Handlebars.compile(document.querySelector('#template-author-link').innerHTML),
+  };
+
+  
+
+
+
+
   const opt = {
     articleSelector: '.post',
     titleSelector: '.post-title',
@@ -81,13 +93,15 @@
       const articleTitle = article.querySelector(opt.titleSelector).innerHTML;
 
       /* [DONE] create HTML of the link */
-      const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+      // const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+      const linkHTMLData = {id: articleId, title: articleTitle};
+      const linkHTML = templates.articleLink(linkHTMLData);
+      
       console.log(linkHTML);
 
       /* [DONE] insert link into titleList */
       html = html + linkHTML;
 
-      console.log(linkHTML); 
     }
 
     titleList.innerHTML = html;
@@ -163,8 +177,12 @@
         /* generate HTML of the link */
         //console.log(articleTagsArray);
 
-        const linkHTML = '<a href="#tag-'+ tag +'">'+ tag +'</a> ';
+        //const linkHTML = ' <li><a href="#tag-' + tag + '">' + tag + '</a></li> ';
+        const linkHTMLData = {id: tag, title: tag};
+        const linkHTML = templates.tagLink(linkHTMLData);
+        
         console.log(linkHTML);
+        
   
         /* add generated code to html variable */
 
@@ -297,7 +315,10 @@
       console.log(articleAuthor);
     
       /* generate HTML of the link */
-      const linkHTML = html + 'by' + ' ' + '<a href="#author-'+ articleAuthor +'">'+ articleAuthor +'</a> ';
+      //const linkHTML = html + 'by' + ' ' + '<a href="#author-'+ articleAuthor +'">'+ articleAuthor +'</a> ';
+      const linkHTMLData = {id: articleAuthor, title: articleAuthor};
+      const linkHTML = templates.authorLink(linkHTMLData);
+      
       console.log(linkHTML);
   
       /* add generated code to html variable */
