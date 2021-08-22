@@ -26,19 +26,16 @@
     }
 
     /* [DONE] get 'href' attribute from the clicked link */
-
     const articleSelector = clickedElement.getAttribute('href');
 
     console.log(articleSelector);
 
     /* [DONE] find the correct article using the selector (value of 'href' attribute) */
-  
     const targetArticle = document.querySelector(articleSelector);
 
     console.log(targetArticle);
 
     /* [DONE] add class 'active' to the correct article */
-
     targetArticle.classList.add('active');
   };
   
@@ -67,7 +64,6 @@
     titleList.innerHTML = '';
   
     /* [DONE] for each article */
-
     const articles = document.querySelectorAll(optArticleSelector + customSelector);
     console.log(optArticleSelector + customSelector);
 
@@ -76,16 +72,13 @@
     for (let article of articles){
 
       /* [DONE] get the article id */
-
       const articleId = article.getAttribute('id');
 
       /* [DONE] find the title element */
       /* [DONE] get the title from the title element */
-  
       const articleTitle = article.querySelector(optTitleSelector).innerHTML;
 
       /* [DONE] create HTML of the link */
-
       const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
       console.log(linkHTML);
 
@@ -106,11 +99,7 @@
 
   generateTitleLinks();
 
-
-  
-
   // Tags Parameters - counting max and min
-
   function calculateTagsParams(tags){
 
     const params = {max: 0, min: 9999};
@@ -137,10 +126,7 @@
     return optCloudClassPrefix + classNumber;
   }
 
-  
-
-
-
+  // Tags 
   function generateTags(){
 
     /* [done] create a new variale allTags with an empty object */
@@ -193,7 +179,6 @@
       /* END LOOP: for each tag */
       }
       /* insert HTML of all the links into the tags wrapper */
-
       tagsList.innerHTML = html;
   
     /* END LOOP: for every article: */
@@ -215,22 +200,19 @@
       const tagLinkHTML = '<li><a class="' + calculateTagClass(allTags[tag], tagsParams) + '" href="#tag-'+ tag +'">'+ tag + '</a> (' + allTags[tag] + ') </li>';
       console.log('tagLinkHTML:', tagLinkHTML);
 
-
       //allTagsHTML += '<a href="#tag-'+ tag +'">'+ tag +'</a> ' + ' (' + allTags[tag] + ') ';
       allTagsHTML += tagLinkHTML;
     
-    /* [SONE] END LOOP: for each tag in allTags: */
+    /* [DONE] END LOOP: for each tag in allTags: */
     }
 
-    /*[SONE] add HTML from allTagsHTML to tagList */
+    /*[DONE] add HTML from allTagsHTML to tagList */
     tagList.innerHTML = allTagsHTML;
-
-
   }
   
   generateTags();
 
-
+  // Tag Click Thingy 
   function tagClickHandler(event){
     /* prevent default action for this event */
     event.preventDefault();
@@ -288,9 +270,7 @@
   
   addClickListenersToTags();
 
-
-
-  //zadanie 7.2  !!!!! Autorzy
+  //ex. 7.2  !!!!! Authors
 
   function generateAuthors(){
 
@@ -331,7 +311,6 @@
       }
   
       /* insert HTML of all the links into the authors wrapper */
-
       authorsList.innerHTML = html;
   
       /* END LOOP: for every article: */
@@ -359,7 +338,7 @@
 
   generateAuthors();
 
-  // zad. 7.2 !!! Klikanie Autorów
+  // ex. 7.2 !!! Authors Click Thingy
 
   function authorClickHandler(event){
     /* prevent default action for this event */
@@ -417,15 +396,5 @@
   }
   
   addClickListenersToAuthors();
-
-
-
-  
-
-
-
-
-
-
 
 }
