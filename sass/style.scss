@@ -100,21 +100,12 @@ body {
 /* Authors */
 
 .authors {
-  display: flex;
-  flex-wrap: wrap;
-  font-style: italic;
+  display: inline;
   
   li {
     margin-bottom: 12px;
   }
-  
-  a {
-      flex: 0 0 50%;
-  }
 
-  #text {
-      flex: 0 0 50%;
-  }
 }
 
 
