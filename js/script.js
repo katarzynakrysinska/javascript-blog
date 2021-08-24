@@ -391,8 +391,8 @@
     /* [NEW] START LOOP: for each tag in allTags: */
     for(let articleAuthor in allAuthors){
     /* [NEW] generate code of a link and add it to allTagsHTML */
-      const authorLinkHTML = '<li><a class="' + calculateAuthorClass(allAuthors[articleAuthor], authorsParams) + '" href="#author-'+ articleAuthor +'">'+ articleAuthor + '</a> (' + allAuthors[articleAuthor] + ') </li>';
-      console.log('authorLinkHTML:', authorLinkHTML);
+      //const authorLinkHTML = '<li><a class="' + calculateAuthorClass(allAuthors[articleAuthor], authorsParams) + '" href="#author-'+ articleAuthor +'">'+ articleAuthor + '</a> (' + allAuthors[articleAuthor] + ') </li>';
+      //console.log('authorLinkHTML:', authorLinkHTML);
     
       //allAuthorsHTML += authorLinkHTML;
       allAuthorsData.authors.push({
